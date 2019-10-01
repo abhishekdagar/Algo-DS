@@ -54,27 +54,14 @@ Tree insert(Tree tree, int value) {
 //Depth-First-Search:
 
 void preorder(Tree tree) {
-    if (tree == NULL)
-        return;
-    if (tree->left == NULL && tree->right == NULL)
-        printf("%d ",tree->value);
-    if (tree->left != NULL && tree->right == NULL)
-    {
-        printf("%d ",tree->value);
-        preorder(tree->left);
-    }
-    if (tree->right != NULL && tree->left == NULL)
-    {
-        printf("%d ",tree->value);
-        preorder(tree->right);
-    }
-    if (tree->right != NULL && tree->left != NULL)
-    {
-        printf("%d ",tree->value);
-        preorder(tree->left);
-        preorder(tree->right);
-    }
+	if(tree)
+	{
+	printf("%d",tree->value);
+	preorder(tree->left);
+	preorder(tree->right);
+	}
 }
+    
 
 void inorder(Tree tree) {
     if (tree == NULL)
